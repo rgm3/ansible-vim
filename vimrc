@@ -13,7 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'pearofducks/ansible-vim'
 call plug#end()
 
-colorscheme molokai
+silent! colorscheme molokai
 
 " Highlight ansible task names, dim or bright
 let g:ansible_name_highlight = 'd'
@@ -22,3 +22,7 @@ let g:ansible_name_highlight = 'd'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+set ts=2
+set sw=2
+set expandtab

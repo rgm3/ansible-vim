@@ -1,0 +1,11 @@
+# Example hosts inventory demonstrating groups and host-specific variables
+# for localhost.
+[dev]
+autobuild
+build
+build.you.dev.lan
+
+
+[others]
+localhost ansible_connection=local
+laptop.local

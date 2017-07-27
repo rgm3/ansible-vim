@@ -3,6 +3,7 @@
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
@@ -50,3 +51,5 @@ map g# <Plug>(incsearch-nohl-g#)
 " nnoremap <leader>u :GundoToggle<CR> " toggle gundo
 
 let g:vim_markdown_folding_disabled = 1 " Disable vim-markdown specific folding
+
+let g:fugitive_gitlab_domains = ['https://gitlab.dev.lan']

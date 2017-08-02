@@ -6,7 +6,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasr/molokai'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
@@ -15,8 +14,16 @@ Plug 'pearofducks/ansible-vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'sjl/gundo.vim'
+"Plug 'sjl/gundo.vim' " TODO: explore
 Plug 'plasticboy/vim-markdown'
+" Colors
+Plug 'tomasr/molokai'
+Plug 'twerth/ir_black'
+Plug 'nanotech/jellybeans.vim'
+Plug 'romainl/Apprentice'
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'trusktr/seti.vim'
+Plug 'kudabux/vim-srcery-drk'
 call plug#end()
 
 silent! colorscheme molokai

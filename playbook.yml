@@ -7,6 +7,14 @@
 
   tasks:
 
+    - name: check prerequisites
+      command: which {{ item }}
+      register: which_result
+      changed_when: false
+      with_items:
+        - git
+        - vim
+
     - name: create .vim/autoload
       file:
         path: "{{ ansible_user_dir }}/.vim/autoload"

@@ -10,6 +10,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
+Plug 'fatih/vim-go'
 Plug 'pearofducks/ansible-vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

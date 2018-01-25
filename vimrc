@@ -27,6 +27,10 @@ Plug 'trusktr/seti.vim'
 Plug 'kudabux/vim-srcery-drk'
 call plug#end()
 
+set t_Co=256
+if has('nvim-0.1.5')
+  set termguicolors
+endif
 silent! colorscheme molokai
 let g:airline_powerline_fonts = 0  " https://github.com/powerline/fonts
 let g:airline_theme='badwolf'

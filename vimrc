@@ -68,6 +68,7 @@ set autowrite
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
+let g:go_version_warning = 0 " vim-go requires 7.4.1689+. CentOS 6 doesn't have that.
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()

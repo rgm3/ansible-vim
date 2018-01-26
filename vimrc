@@ -16,19 +16,23 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'sjl/gundo.vim' " TODO: explore
 Plug 'plasticboy/vim-markdown'
+Plug 'fatih/vim-go'
 " Colors
 Plug 'tomasr/molokai'
-Plug 'fatih/vim-go'
 Plug 'twerth/ir_black'
 Plug 'nanotech/jellybeans.vim'
 Plug 'romainl/Apprentice'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'trusktr/seti.vim'
 Plug 'kudabux/vim-srcery-drk'
+Plug 'gilgigilgil/anderson.vim'
+Plug 'Badacadabra/vim-archery'
+Plug 'andreasvc/vim-256noir'
+Plug 'rakr/vim-two-firewatch'
 call plug#end()
 
 set t_Co=256
-if has('nvim-0.1.5')
+if has("termguicolors")
   set termguicolors
 endif
 silent! colorscheme molokai

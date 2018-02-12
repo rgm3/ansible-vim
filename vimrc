@@ -93,7 +93,12 @@ let g:go_highlight_build_constraints = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:go_auto_sameids = 1
 
-
 let g:vim_markdown_folding_disabled = 1 " Disable vim-markdown specific folding
 
 let g:fugitive_gitlab_domains = ['https://gitlab.dev.lan']
+
+" Enable persistent undo
+if has('persistent_undo')
+  set undofile
+  set undodir=$HOME/.vim/undo
+endif

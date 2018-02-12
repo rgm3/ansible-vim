@@ -15,10 +15,13 @@
       - git
       - vim
 
-  - name: create .vim/autoload
+  - name: create .vim/ dirs
     file:
-      path: "{{ ansible_user_dir }}/.vim/autoload"
+      path: "{{ ansible_user_dir }}/.vim/{{item}}"
       state: directory
+    with_items:
+      - autoload
+      - undo
 
   - name: install plug.vim
     get_url:

@@ -3,7 +3,11 @@
 # Install basic vim configuration
 
 - hosts: all
-  gather_facts: yes
+  gather_facts: no
+
+  pre_tasks:
+  - setup:
+      gather_subset: !all
 
   tasks:
 

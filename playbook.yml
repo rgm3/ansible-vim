@@ -7,7 +7,7 @@
 
   pre_tasks:
   - setup:
-      gather_subset: !all
+      gather_subset: min
 
   tasks:
 

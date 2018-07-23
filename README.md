@@ -5,7 +5,13 @@ Install my preferred basic vim configuration based on
 
 [1]: https://github.com/junegunn/vim-plug
 
-## Install
+## Install with shell on local box
+
+```bash
+curl -fsSL "https://raw.githubusercontent.com/rgm3/ansible-vim/master/install.sh" | bash
+```
+
+## Install with ansible
 
 ```bash
 # Install locally for the current user

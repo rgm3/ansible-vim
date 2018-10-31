@@ -18,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go'
 " Colors
+Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'twerth/ir_black'
 Plug 'nanotech/jellybeans.vim'
@@ -35,7 +36,7 @@ set t_Co=256
 if has("termguicolors")
   set termguicolors
 endif
-silent! colorscheme molokai
+silent! colorscheme gruvbox
 let g:airline_powerline_fonts = 0  " https://github.com/powerline/fonts
 let g:airline_theme='badwolf'
 
@@ -97,8 +98,16 @@ let g:vim_markdown_folding_disabled = 1 " Disable vim-markdown specific folding
 
 let g:fugitive_gitlab_domains = ['https://gitlab.dev.lan']
 
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'passive_filetypes': ['java'] }
+
 " Enable persistent undo
 if has('persistent_undo')
   set undofile
   set undodir=$HOME/.vim/undo
 endif
+
+" Change cursor shape in insert mode
+" TODO: check $TERM_PROFILE=Iterm.app
+let &t_SI = "\<Esc>]1337;CursorShape=1\x7"
+let &t_EI = "\<Esc>]1337;CursorShape=0\x7"

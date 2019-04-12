@@ -32,11 +32,15 @@ Plug 'andreasvc/vim-256noir'
 Plug 'rakr/vim-two-firewatch'
 call plug#end()
 
+set bg=dark
 set t_Co=256
 if has("termguicolors")
   set termguicolors
 endif
 silent! colorscheme gruvbox
+if &diff
+ colorscheme jellybeans
+endif
 let g:airline_powerline_fonts = 0  " https://github.com/powerline/fonts
 let g:airline_theme='badwolf'
 

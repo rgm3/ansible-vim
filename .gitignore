@@ -2,3 +2,7 @@
 *.retry
 hosts
 ansible.log
+
+# local dev
+.vscode
+.python-version

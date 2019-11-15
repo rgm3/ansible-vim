@@ -14,9 +14,9 @@ Plug 'pearofducks/ansible-vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'sjl/gundo.vim' " TODO: explore
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go'
+Plug 'dag/vim-fish'
 " Colors
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
@@ -25,7 +25,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'romainl/Apprentice'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'trusktr/seti.vim'
-Plug 'kudabux/vim-srcery-drk'
 Plug 'gilgigilgil/anderson.vim'
 Plug 'Badacadabra/vim-archery'
 Plug 'andreasvc/vim-256noir'
@@ -41,8 +40,11 @@ silent! colorscheme gruvbox
 if &diff
  colorscheme jellybeans
 endif
+
+" airline config
 let g:airline_powerline_fonts = 0  " https://github.com/powerline/fonts
 let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
 
 let g:ansible_name_highlight = 'd' " Highlight ansible task names, dim or bright
 if executable('ag')                " Let ack.vim use ag if available
@@ -73,6 +75,9 @@ set autowrite
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
+nnoremap <leader>ve :e $MYVIMRC<CR>
+nnoremap <leader>vr :source $MYVIMRC<CR>
+
 let g:go_version_warning = 0 " vim-go requires 7.4.1689+. CentOS 6 doesn't have that.
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 " run :GoBuild or :GoTestCompile based on the go file
@@ -94,13 +99,10 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
-" nnoremap <leader>u :GundoToggle<CR> " toggle gundo
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:go_auto_sameids = 1
 
 let g:vim_markdown_folding_disabled = 1 " Disable vim-markdown specific folding
-
-let g:fugitive_gitlab_domains = ['https://gitlab.dev.lan']
 
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['java'] }
@@ -112,6 +114,7 @@ if has('persistent_undo')
 endif
 
 " Change cursor shape in insert mode
-" TODO: check $TERM_PROFILE=Iterm.app
-let &t_SI = "\<Esc>]1337;CursorShape=1\x7"
-let &t_EI = "\<Esc>]1337;CursorShape=0\x7"
+if $TERM_PROGRAM ==# "iTerm.app"
+  let &t_SI = "\<Esc>]1337;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]1337;CursorShape=0\x7"
+endif
